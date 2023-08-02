@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+    PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+    "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.game.vo.BoardInfoVO">
+
+    <select id="selectBoardInfoList" resultType="com.game.vo.BoardInfoVO">
+        SELECT * FROM BOARD_INFO
+    </select>
+    <select id="selectBoardInfoOne" resultType="com.game.vo.BoardInfoVO">
+    	SELECT * FROM BOARD_INFO WHERE = #{biNum}
+    </select>
+    <insert id="insertBoardInfo" parameterType="com.game.vo.BoardInfoVO">
+    	INSERT INTO BOARD_INFO(BI_TITLE, BI_CONTENT, UI_NUM, CREDAT, CRETIM, LMODAT, LMOTIM)
+    	VALUES(#{biTitle}, #{biContent}, #{uiNum}, DATE_FORMAT(NOW(), '%Y%m%d'), DATE_FORMAT(NOW(), '%H%i%s'),
+    	DATE_FORMAT(NOW(), '%Y%m%d'), DATE_FORMAT(NOW(), '%H%i%s'))
+    </insert>
+    <update id="updateBoardInfo" parameterType="com.game.vo.BoardInfoVO">
+    	UPDATE BOARD_INFO
+    	SET BI_TITLE = #{biTitle}, BI_CONTENT = #{biContent}, UI_NUM = #{uiNum},
+    	LMODAT = DATE_FORMAT(NOW(), '%Y%m%d'), LMOTIM = DATE_FORMAT(NOW(), '%H%i%s')
+    	WHERE = #{biNum}
+    </update>
+
+</mapper>
