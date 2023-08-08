@@ -3,9 +3,11 @@ package com.game.service;
 import java.util.List;
 import java.util.Map;
 
+import com.game.vo.UserInfoVO;
+
 public interface UserInfoService {
 
-	List<Map<String, String>> selectUserInfoList(Map<String, String> user);
+	List<UserInfoVO> selectUserInfoList(UserInfoVO user);
 	
 	Map<String, String> selectUserInfoOne(String uiNum);
 	

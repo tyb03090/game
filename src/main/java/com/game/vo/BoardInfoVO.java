@@ -10,8 +10,23 @@ public class BoardInfoVO {
 	private String cretim;
 	private String lmodat;
 	private String lmotim;
-	private String action;
+	private String active;
+	private String uiName;
+	private String searchStr;
+	private String searchType;
 	
+	public String getSearchStr() {
+		return searchStr;
+	}
+	public void setSearchStr(String searchStr) {
+		this.searchStr = searchStr;
+	}
+	public String getSearchType() {
+		return searchType;
+	}
+	public void setSearchType(String searchType) {
+		this.searchType = searchType;
+	}
 	public int getBiNum() {
 		return biNum;
 	}
@@ -60,18 +75,24 @@ public class BoardInfoVO {
 	public void setLmotim(String lmotim) {
 		this.lmotim = lmotim;
 	}
-	public String getAction() {
-		return action;
+	public String getActive() {
+		return active;
 	}
-	public void setAction(String action) {
-		this.action = action;
+	public void setActive(String active) {
+		this.active = active;
+	}
+	public String getUiName() {
+		return uiName;
+	}
+	public void setUiName(String uiName) {
+		this.uiName = uiName;
 	}
 	
 	@Override
 	public String toString() {
 		return "BoardInfoVO [biNum=" + biNum + ", biTitle=" + biTitle + ", biContent=" + biContent + ", uiNum=" + uiNum
 				+ ", credat=" + credat + ", cretim=" + cretim + ", lmodat=" + lmodat + ", lmotim=" + lmotim
-				+ ", action=" + action + "]";
+				+ ", active=" + active + "]";
 	}
 
 	
